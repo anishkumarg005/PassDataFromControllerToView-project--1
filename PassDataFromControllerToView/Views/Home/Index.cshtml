@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>First name : @ViewBag.FirstName</p>
+<p>LastName:@ViewBag.LastName</p>
+<p>Address:@ViewBag.Address</p>
+
+@{ 
+    var firstNumber = 10;
+    var secondNumber = 20;
+    var sum = firstNumber + secondNumber;
+    <p>The sum of two number is @sum</p>
+}
+
+@{ 
+    var number1 = 50;
+    var number2 = 60;
+
+    if(firstNumber>secondNumber)
+            {
+                <p>First Number isGreater than second number</p>
+
+    }else
+            {
+                <text>second Number is greater than first number</text>
+            }
+}
+
+
+
+@for (int i=1;i<10;i++)
+            {
+                <p>2 x @i=@(2*i)</p>
+
+            }

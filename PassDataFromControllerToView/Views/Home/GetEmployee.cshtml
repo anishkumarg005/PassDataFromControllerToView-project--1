@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "GetEmployee";
+}
+
+<h2>Employee Details</h2>
+<head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+    </head>
+<table class="table table-bordered table-hover">
+    <tr class="btn-primary">
+        <th>EmployeeID</th>
+        <th>EmployeeName</th>
+        <th>Address</th>
+        <th>DateOfJoining</th>
+        <th>MaterialStatus</th>
+        <th>IsEligibleForLoan</th>
+        <th>salary</th>
+        <th>CreatedBy</th>
+        <th>CreatedDate</th>
+        <th>Action</th>
+    </tr>
+    
+    @foreach (var employee in ViewBag.Employees)
+    {
+    <tr>
+        <td>@employee.EmployeeID</td>
+        <td>@employee.EmployeeName</td>
+        <td>@employee.Address</td>
+        <td>@employee.DateOfJoining</td>
+        <td>
+        @if (employee.MaterialStatus == 1)
+        {
+                <p>Single</p>
+        }
+        else
+        {
+            <p>Married</p>
+        }
+        </td>
+        <td>@employee.IsEligibleForLoan</td>
+        <td>@employee.salary</td>
+        <td>@employee.CreatedBy</td>
+        <td>@employee.CreatedDate</td>
+        <td>
+            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+       
+    </tr>
+    }
+</table>
+
